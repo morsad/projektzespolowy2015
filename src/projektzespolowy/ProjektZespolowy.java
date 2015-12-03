@@ -9,6 +9,7 @@ public class ProjektZespolowy {
         int a;
         System.out.println("To jest zajebisty program");
         System.out.println("To jest zajebisty program");
+        System.out.println("czemu to jest dwa razy???");
     }
     
 }
