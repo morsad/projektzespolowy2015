@@ -14,7 +14,7 @@ public class ProjektZespolowy {
         System.out.println("e to niezle");
         int b=5;
         System.out.println(b);
-        b=b^2;
+        b=b*b;
         System.out.println(b);
     }
     
