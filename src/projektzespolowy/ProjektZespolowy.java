@@ -16,6 +16,8 @@ public class ProjektZespolowy {
         System.out.println(b);
         b=b*b;
         System.out.println(b);
+        b=b+b;
+        System.out.println(b);
     }
     
 }
