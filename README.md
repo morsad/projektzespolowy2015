@@ -1,2 +1,2 @@
-# projektzespolowy2015
-test
+# slownik projekt zespolowy
+Fiszki project 2015 umcs
