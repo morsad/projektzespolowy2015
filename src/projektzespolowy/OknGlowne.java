@@ -16,6 +16,8 @@ public class OknGlowne extends javax.swing.JFrame {
      */
     public OknGlowne() {
         initComponents();
+        jPanel_logowanie.setVisible(false);
+        jPanel_oProgramie.setVisible(false); 
     }
 
     /**
@@ -27,58 +29,286 @@ public class OknGlowne extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel_logowanie = new javax.swing.JPanel();
+        jTextField_login = new javax.swing.JTextField();
+        jTextField_haslo = new javax.swing.JPasswordField();
+        jLabel_login = new javax.swing.JLabel();
+        jLabel_haslo = new javax.swing.JLabel();
+        jButton_zaloguj = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel_oProgramie = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu_plik = new javax.swing.JMenu();
+        jMenuItem_zaloguj = new javax.swing.JMenuItem();
+        jMenuItem_zakoncz = new javax.swing.JMenuItem();
+        jMenu_narzedzia = new javax.swing.JMenu();
+        jMenuItem_dodaj = new javax.swing.JMenuItem();
+        jMenuItem_edytuj = new javax.swing.JMenuItem();
+        jMenu_pommoc = new javax.swing.JMenu();
+        jMenuItem_oProgramie = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(480, 400));
+        setMinimumSize(new java.awt.Dimension(480, 400));
+        setPreferredSize(new java.awt.Dimension(480, 400));
+        setResizable(false);
 
-        jButton1.setText("TEST");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jPanel_logowanie.setMaximumSize(new java.awt.Dimension(460, 400));
+        jPanel_logowanie.setMinimumSize(new java.awt.Dimension(460, 400));
+        jPanel_logowanie.setName(""); // NOI18N
+        jPanel_logowanie.setPreferredSize(new java.awt.Dimension(460, 400));
+        jPanel_logowanie.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                jPanel_logowanieComponentHidden(evt);
             }
         });
+
+        jTextField_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_loginActionPerformed(evt);
+            }
+        });
+
+        jTextField_haslo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_hasloActionPerformed(evt);
+            }
+        });
+
+        jLabel_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel_login.setText("Login");
+
+        jLabel_haslo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel_haslo.setText("Hasło");
+
+        jButton_zaloguj.setText("Zaloguj");
+
+        javax.swing.GroupLayout jPanel_logowanieLayout = new javax.swing.GroupLayout(jPanel_logowanie);
+        jPanel_logowanie.setLayout(jPanel_logowanieLayout);
+        jPanel_logowanieLayout.setHorizontalGroup(
+            jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_logowanieLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel_login, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_haslo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_logowanieLayout.createSequentialGroup()
+                        .addComponent(jButton_zaloguj)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel_logowanieLayout.createSequentialGroup()
+                        .addGroup(jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField_haslo, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(jTextField_login))
+                        .addGap(187, 187, 187))))
+        );
+        jPanel_logowanieLayout.setVerticalGroup(
+            jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_logowanieLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_login, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_haslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_haslo))
+                .addGap(36, 36, 36)
+                .addComponent(jButton_zaloguj)
+                .addContainerGap(205, Short.MAX_VALUE))
+        );
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(460, 400));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        jLabel1.setText("Witamy w super zajebistym fiszkopasztecie");
+
+        jLabel2.setText("czyli fiszki zwiazane z pasztetem");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(34, 34, 34))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(183, Short.MAX_VALUE))
         );
+
+        jPanel_oProgramie.setPreferredSize(new java.awt.Dimension(460, 400));
+        jPanel_oProgramie.setVerifyInputWhenFocusTarget(false);
+
+        jLabel3.setText("Wersja programu: 0.0.0.0.0.0.0.0.0.0.0.0.0.0.1");
+
+        jLabel4.setText("© Kamil Jaroniec, Łukasz Wójciuk");
+
+        javax.swing.GroupLayout jPanel_oProgramieLayout = new javax.swing.GroupLayout(jPanel_oProgramie);
+        jPanel_oProgramie.setLayout(jPanel_oProgramieLayout);
+        jPanel_oProgramieLayout.setHorizontalGroup(
+            jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
+                    .addContainerGap(92, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(95, Short.MAX_VALUE)))
+            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
+                    .addContainerGap(93, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(150, Short.MAX_VALUE)))
+        );
+        jPanel_oProgramieLayout.setVerticalGroup(
+            jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
+                    .addContainerGap(117, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(112, Short.MAX_VALUE)))
+            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
+                    .addContainerGap(256, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(109, Short.MAX_VALUE)))
+        );
+
+        jMenuBar1.setMaximumSize(new java.awt.Dimension(640, 640));
+        jMenuBar1.setMinimumSize(new java.awt.Dimension(640, 640));
+        jMenuBar1.setName(""); // NOI18N
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(133, 20));
+
+        jMenu_plik.setText("Plik");
+
+        jMenuItem_zaloguj.setText("Zaloguj");
+        jMenuItem_zaloguj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_zalogujActionPerformed(evt);
+            }
+        });
+        jMenu_plik.add(jMenuItem_zaloguj);
+
+        jMenuItem_zakoncz.setText("Zakończ");
+        jMenuItem_zakoncz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_zakonczActionPerformed(evt);
+            }
+        });
+        jMenu_plik.add(jMenuItem_zakoncz);
+
+        jMenuBar1.add(jMenu_plik);
+
+        jMenu_narzedzia.setText("Narzędzia");
+
+        jMenuItem_dodaj.setText("Dodaj");
+        jMenu_narzedzia.add(jMenuItem_dodaj);
+
+        jMenuItem_edytuj.setText("Edytuj");
+        jMenuItem_edytuj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_edytujActionPerformed(evt);
+            }
+        });
+        jMenu_narzedzia.add(jMenuItem_edytuj);
+
+        jMenuBar1.add(jMenu_narzedzia);
+
+        jMenu_pommoc.setText("Pomoc");
+
+        jMenuItem_oProgramie.setText("O programie");
+        jMenuItem_oProgramie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_oProgramieActionPerformed(evt);
+            }
+        });
+        jMenu_pommoc.add(jMenuItem_oProgramie);
+
+        jMenuBar1.add(jMenu_pommoc);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(169, Short.MAX_VALUE))
+            .addComponent(jPanel_logowanie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel_oProgramie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+            .addComponent(jPanel_logowanie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel_oProgramie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jMenuItem_zakonczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_zakonczActionPerformed
+System.exit(0);
+    }//GEN-LAST:event_jMenuItem_zakonczActionPerformed
+
+    private void jMenuItem_edytujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_edytujActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem_edytujActionPerformed
+
+    private void jPanel_logowanieComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel_logowanieComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel_logowanieComponentHidden
+
+    private void jMenuItem_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_zalogujActionPerformed
+        jPanel_logowanie.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem_zalogujActionPerformed
+
+    private void jTextField_hasloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_hasloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_hasloActionPerformed
+
+    private void jTextField_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_loginActionPerformed
+
+    private void jMenuItem_oProgramieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_oProgramieActionPerformed
+        jPanel_logowanie.setVisible(false);
+        jPanel_oProgramie.setVisible(true);    
+        jPanel1.setVisible(false);
+    }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,7 +346,26 @@ public class OknGlowne extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton_zaloguj;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel_haslo;
+    private javax.swing.JLabel jLabel_login;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem_dodaj;
+    private javax.swing.JMenuItem jMenuItem_edytuj;
+    private javax.swing.JMenuItem jMenuItem_oProgramie;
+    private javax.swing.JMenuItem jMenuItem_zakoncz;
+    private javax.swing.JMenuItem jMenuItem_zaloguj;
+    private javax.swing.JMenu jMenu_narzedzia;
+    private javax.swing.JMenu jMenu_plik;
+    private javax.swing.JMenu jMenu_pommoc;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel_logowanie;
+    private javax.swing.JPanel jPanel_oProgramie;
+    private javax.swing.JPasswordField jTextField_haslo;
+    private javax.swing.JTextField jTextField_login;
     // End of variables declaration//GEN-END:variables
 }
