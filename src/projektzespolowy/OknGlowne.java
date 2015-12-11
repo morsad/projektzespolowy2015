@@ -531,6 +531,18 @@ System.exit(0);
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        try{
+            String host= "jdbc:derby://localhost:1527/Baza";
+            String uName = "admin93";
+            String uPass= "admin";
+        
+        Connection con=DriverManager.getConnection(host, uName, uPass);
+        }
+        catch (SQLException err) {
+            System.out.println(err.getMessage());
+        }
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
