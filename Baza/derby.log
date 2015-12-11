@@ -16,3 +16,16 @@ Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 Fri Dec 11 15:59:45 CET 2015:
 Wy³¹czanie instancji a816c00e-0151-918d-b76e-ffffdaa766a9
 Fri Dec 11 15:59:45 CET 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = Baza), (DRDAID = {2}), Baza danych 'Baza' zosta³a wy³¹czona.
+----------------------------------------------------------------
+Fri Dec 11 16:02:43 CET 2015:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) systemu Derby: instancja 560740aa-0151-918d-b76e-ffffdaa766a9
+w katalogu bazy danych C:\Users\Kamil\Documents\NetBeansProjects\projektt\projektzespolowy2015\Baza\Baza sun.misc.Launcher$AppClassLoader@5e2de80c 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_60-b27
+user.dir=C:\Program Files\glassfish-4.1\javadb
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=C:\Users\Kamil\Documents\NetBeansProjects\projektt\projektzespolowy2015\Baza
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
