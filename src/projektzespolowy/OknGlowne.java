@@ -5,10 +5,10 @@
  */
 package projektzespolowy;
 
-/**
- *
- * @author Morsad
- */
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class OknGlowne extends javax.swing.JFrame {
 
     /**
@@ -349,7 +349,7 @@ public class OknGlowne extends javax.swing.JFrame {
                     .addComponent(jButton3))
                 .addGap(44, 44, 44)
                 .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         jMenuBar1.setMaximumSize(new java.awt.Dimension(640, 640));
