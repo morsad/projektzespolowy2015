@@ -8,6 +8,7 @@ package projektzespolowy;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class OknGlowne extends javax.swing.JFrame {
 
@@ -16,12 +17,12 @@ public class OknGlowne extends javax.swing.JFrame {
      */
     public OknGlowne() {
         initComponents();
-        jPanel_logowanie.setVisible(false);
-        jPanel_oProgramie.setVisible(false); 
+        jPanel_logowanie.setVisible(false);        
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_fiszkiNauka.setVisible(false);
         jPanel_ocena.setVisible(false);
         jPanel_edytujSlownik.setVisible(false);
+        jPanel_rejestracja.setVisible(false);
 
 
     }
@@ -35,23 +36,21 @@ public class OknGlowne extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel_start = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel_logowanie = new javax.swing.JPanel();
         jTextField_login = new javax.swing.JTextField();
         jTextField_haslo = new javax.swing.JPasswordField();
         jLabel_login = new javax.swing.JLabel();
         jLabel_haslo = new javax.swing.JLabel();
         jButton_zaloguj = new javax.swing.JButton();
-        jPanel_start = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel_oProgramie = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel_fiszkiWybor = new javax.swing.JPanel();
-        jScrollPane = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
         jPanel_fiszkiNauka = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -75,9 +74,18 @@ public class OknGlowne extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton_zapisz = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
+        jPanel_rejestracja = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_plik = new javax.swing.JMenu();
-        jMenuItem_zaloguj = new javax.swing.JMenuItem();
         jMenuItem_zakoncz = new javax.swing.JMenuItem();
         jMenu_narzedzia = new javax.swing.JMenu();
         jMenuItem_edytujSlownik = new javax.swing.JMenuItem();
@@ -85,10 +93,73 @@ public class OknGlowne extends javax.swing.JFrame {
         jMenuItem_oProgramie = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(480, 400));
+        setTitle("Fiszki");
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocation(new java.awt.Point(0, 0));
+        setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(1000, 1000));
         setMinimumSize(new java.awt.Dimension(480, 400));
         setPreferredSize(new java.awt.Dimension(480, 400));
-        setResizable(false);
+
+        jPanel_start.setPreferredSize(new java.awt.Dimension(460, 400));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Witaj w programie Fiszki");
+        jLabel1.setVerifyInputWhenFocusTarget(false);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Zaloguj się by móc korzystać z programu");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jButton2.setText("Logowanie");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Rejestracja");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_startLayout = new javax.swing.GroupLayout(jPanel_start);
+        jPanel_start.setLayout(jPanel_startLayout);
+        jPanel_startLayout.setHorizontalGroup(
+            jPanel_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_startLayout.createSequentialGroup()
+                .addGroup(jPanel_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_startLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel_startLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel_startLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(73, 73, 73))
+        );
+        jPanel_startLayout.setVerticalGroup(
+            jPanel_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_startLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(jPanel_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton4))
+                .addGap(66, 66, 66))
+        );
 
         jPanel_logowanie.setMaximumSize(new java.awt.Dimension(460, 400));
         jPanel_logowanie.setMinimumSize(new java.awt.Dimension(460, 400));
@@ -161,93 +232,23 @@ public class OknGlowne extends javax.swing.JFrame {
                 .addContainerGap(205, Short.MAX_VALUE))
         );
 
-        jPanel_start.setPreferredSize(new java.awt.Dimension(460, 400));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jLabel1.setText("Witamy w super zajebistym fiszkopasztecie");
-
-        jLabel2.setText("czyli fiszki zwiazane z pasztetem");
-
-        javax.swing.GroupLayout jPanel_startLayout = new javax.swing.GroupLayout(jPanel_start);
-        jPanel_start.setLayout(jPanel_startLayout);
-        jPanel_startLayout.setHorizontalGroup(
-            jPanel_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_startLayout.createSequentialGroup()
-                .addGroup(jPanel_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_startLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel_startLayout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-        jPanel_startLayout.setVerticalGroup(
-            jPanel_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_startLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(183, Short.MAX_VALUE))
-        );
-
-        jPanel_oProgramie.setPreferredSize(new java.awt.Dimension(460, 400));
-        jPanel_oProgramie.setVerifyInputWhenFocusTarget(false);
-
-        jLabel3.setText("Wersja programu: 0.0.0.0.0.0.0.0.0.0.0.0.0.0.5");
-
-        jLabel4.setText("© Kamil Jaroniec, Łukasz Wójciuk");
-
-        javax.swing.GroupLayout jPanel_oProgramieLayout = new javax.swing.GroupLayout(jPanel_oProgramie);
-        jPanel_oProgramie.setLayout(jPanel_oProgramieLayout);
-        jPanel_oProgramieLayout.setHorizontalGroup(
-            jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
-            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
-                    .addContainerGap(92, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(95, Short.MAX_VALUE)))
-            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
-                    .addContainerGap(93, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(150, Short.MAX_VALUE)))
-        );
-        jPanel_oProgramieLayout.setVerticalGroup(
-            jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
-                    .addContainerGap(117, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(112, Short.MAX_VALUE)))
-            .addGroup(jPanel_oProgramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_oProgramieLayout.createSequentialGroup()
-                    .addContainerGap(256, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(109, Short.MAX_VALUE)))
-        );
-
         jPanel_fiszkiWybor.setName(""); // NOI18N
         jPanel_fiszkiWybor.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jList2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane.setViewportView(jList2);
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Wybierz kategorie które chcesz się uczyć");
+        jLabel5.setText("Wybierz słownik z którego będziesz sie uczył");
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Słownik1", "Słownik2", "Słownik3" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -258,37 +259,37 @@ public class OknGlowne extends javax.swing.JFrame {
             .addGroup(jPanel_fiszkiWyborLayout.createSequentialGroup()
                 .addGroup(jPanel_fiszkiWyborLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_fiszkiWyborLayout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addGap(131, 131, 131)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
                         .addComponent(jButton1))
                     .addGroup(jPanel_fiszkiWyborLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(83, 83, 83)
                         .addComponent(jLabel5)))
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         jPanel_fiszkiWyborLayout.setVerticalGroup(
             jPanel_fiszkiWyborLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_fiszkiWyborLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(63, 63, 63)
                 .addComponent(jLabel5)
-                .addGroup(jPanel_fiszkiWyborLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_fiszkiWyborLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel_fiszkiWyborLayout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jButton1)))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addGroup(jPanel_fiszkiWyborLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
 
         jPanel_fiszkiNauka.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jTextField1.setText("jTextField1");
         jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField1.setEnabled(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setEditable(false);
         jTextField2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextField2.setEnabled(false);
 
@@ -369,18 +370,17 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_fiszkiNaukaLayout.setHorizontalGroup(
             jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(22, 22, 22)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(22, 22, 22)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_fiszkiNaukaLayout.createSequentialGroup()
+                .addContainerGap(88, Short.MAX_VALUE)
+                .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
         );
         jPanel_fiszkiNaukaLayout.setVerticalGroup(
             jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,9 +390,9 @@ public class OknGlowne extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
-                .addGap(44, 44, 44)
+                .addGap(37, 37, 37)
                 .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel_edytujSlownik.setPreferredSize(new java.awt.Dimension(460, 400));
@@ -500,20 +500,88 @@ public class OknGlowne extends javax.swing.JFrame {
                 .addContainerGap(109, Short.MAX_VALUE))
         );
 
+        jLabel3.setText("Hasło");
+
+        jLabel4.setText("Login");
+
+        jLabel7.setText("Powtórz hasło");
+
+        jLabel8.setText("Email");
+
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
+        jTextField8.setToolTipText("");
+
+        jButton5.setText("Zarejestruj");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_rejestracjaLayout = new javax.swing.GroupLayout(jPanel_rejestracja);
+        jPanel_rejestracja.setLayout(jPanel_rejestracjaLayout);
+        jPanel_rejestracjaLayout.setHorizontalGroup(
+            jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_rejestracjaLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(jTextField5)
+                    .addComponent(jTextField7)
+                    .addComponent(jTextField8))
+                .addContainerGap(176, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_rejestracjaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(117, 117, 117))
+        );
+        jPanel_rejestracjaLayout.setVerticalGroup(
+            jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_rejestracjaLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addComponent(jButton5)
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+
         jMenuBar1.setMaximumSize(new java.awt.Dimension(640, 640));
         jMenuBar1.setMinimumSize(new java.awt.Dimension(640, 640));
         jMenuBar1.setName(""); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(133, 20));
 
         jMenu_plik.setText("Plik");
-
-        jMenuItem_zaloguj.setText("Zaloguj");
-        jMenuItem_zaloguj.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem_zalogujActionPerformed(evt);
-            }
-        });
-        jMenu_plik.add(jMenuItem_zaloguj);
 
         jMenuItem_zakoncz.setText("Zakończ");
         jMenuItem_zakoncz.addActionListener(new java.awt.event.ActionListener() {
@@ -559,29 +627,26 @@ public class OknGlowne extends javax.swing.JFrame {
             .addComponent(jPanel_logowanie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 10, Short.MAX_VALUE)
                     .addComponent(jPanel_start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel_oProgramie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 10, Short.MAX_VALUE)
                     .addComponent(jPanel_fiszkiWybor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 10, Short.MAX_VALUE)
                     .addComponent(jPanel_fiszkiNauka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 10, Short.MAX_VALUE)
                     .addComponent(jPanel_edytujSlownik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel_rejestracja, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -594,11 +659,6 @@ public class OknGlowne extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel_oProgramie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel_fiszkiWybor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -611,6 +671,8 @@ public class OknGlowne extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel_edytujSlownik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel_rejestracja, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -622,8 +684,7 @@ System.exit(0);
 
     private void jMenuItem_edytujSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_edytujSlownikActionPerformed
         jPanel_edytujSlownik.setVisible(true);
-        jPanel_logowanie.setVisible(false);
-        jPanel_oProgramie.setVisible(false); 
+        jPanel_logowanie.setVisible(false);        
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_fiszkiNauka.setVisible(false);
         jPanel_ocena.setVisible(false);
@@ -635,15 +696,6 @@ System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel_logowanieComponentHidden
 
-    private void jMenuItem_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_zalogujActionPerformed
-        jPanel_logowanie.setVisible(true);
-        jPanel_oProgramie.setVisible(false); 
-        jPanel_fiszkiWybor.setVisible(false);
-        jPanel_fiszkiNauka.setVisible(false);
-        jPanel_ocena.setVisible(false);
-        
-    }//GEN-LAST:event_jMenuItem_zalogujActionPerformed
-
     private void jTextField_hasloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_hasloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_hasloActionPerformed
@@ -653,18 +705,12 @@ System.exit(0);
     }//GEN-LAST:event_jTextField_loginActionPerformed
 
     private void jMenuItem_oProgramieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_oProgramieActionPerformed
-        jPanel_logowanie.setVisible(false);
-        jPanel_oProgramie.setVisible(true);    
-        jPanel_start.setVisible(false); 
-        jPanel_fiszkiWybor.setVisible(false);
-        jPanel_fiszkiNauka.setVisible(false);
-        jPanel_ocena.setVisible(false);
+        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.5 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
     }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     private void jButton_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zalogujActionPerformed
         jPanel_fiszkiWybor.setVisible(true);
-        jPanel_logowanie.setVisible(false);
-        jPanel_oProgramie.setVisible(false); 
+        jPanel_logowanie.setVisible(false);        
         jPanel_fiszkiNauka.setVisible(false);
         jPanel_ocena.setVisible(false);
         jPanel_start.setVisible(false);
@@ -673,16 +719,14 @@ System.exit(0);
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jPanel_fiszkiNauka.setVisible(true);
-        jPanel_logowanie.setVisible(false);
-        jPanel_oProgramie.setVisible(false); 
+        jPanel_logowanie.setVisible(false);        
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jPanel_ocena.setVisible(true);
-        jPanel_logowanie.setVisible(false);
-        jPanel_oProgramie.setVisible(false); 
+        jPanel_logowanie.setVisible(false);        
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -709,6 +753,49 @@ System.exit(0);
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jPanel_logowanie.setVisible(true);
+        jPanel_fiszkiWybor.setVisible(false);
+        jPanel_fiszkiNauka.setVisible(false);
+        jPanel_ocena.setVisible(false);
+        jPanel_start.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        JOptionPane.showMessageDialog(rootPane, "Zarejestrowano!");
+        jPanel_rejestracja.setVisible(false);
+        jPanel_logowanie.setVisible(false);
+        jPanel_fiszkiWybor.setVisible(false);
+        jPanel_fiszkiNauka.setVisible(false);
+        jPanel_ocena.setVisible(false);
+        jPanel_start.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jPanel_rejestracja.setVisible(true);
+        jPanel_logowanie.setVisible(false);
+        jPanel_fiszkiWybor.setVisible(false);
+        jPanel_fiszkiNauka.setVisible(false);
+        jPanel_ocena.setVisible(false);
+        jPanel_start.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -759,7 +846,10 @@ System.exit(0);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton_dodajSlownik;
     private javax.swing.JButton jButton_edytuj;
     private javax.swing.JButton jButton_edytujSlownik;
@@ -771,22 +861,23 @@ System.exit(0);
     private javax.swing.JButton jButton_ocena5;
     private javax.swing.JButton jButton_zaloguj;
     private javax.swing.JButton jButton_zapisz;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel_haslo;
     private javax.swing.JLabel jLabel_login;
     private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
     private javax.swing.JList jList3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem_edytujSlownik;
     private javax.swing.JMenuItem jMenuItem_oProgramie;
     private javax.swing.JMenuItem jMenuItem_zakoncz;
-    private javax.swing.JMenuItem jMenuItem_zaloguj;
     private javax.swing.JMenu jMenu_narzedzia;
     private javax.swing.JMenu jMenu_plik;
     private javax.swing.JMenu jMenu_pommoc;
@@ -794,16 +885,19 @@ System.exit(0);
     private javax.swing.JPanel jPanel_fiszkiNauka;
     private javax.swing.JPanel jPanel_fiszkiWybor;
     private javax.swing.JPanel jPanel_logowanie;
-    private javax.swing.JPanel jPanel_oProgramie;
     private javax.swing.JPanel jPanel_ocena;
+    private javax.swing.JPanel jPanel_rejestracja;
     private javax.swing.JPanel jPanel_start;
-    private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JPasswordField jTextField_haslo;
     private javax.swing.JTextField jTextField_login;
     // End of variables declaration//GEN-END:variables
