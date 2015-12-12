@@ -282,6 +282,7 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jPanel_fiszkiNauka.setPreferredSize(new java.awt.Dimension(460, 400));
 
+        jTextField1.setEditable(false);
         jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,7 +292,6 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jTextField2.setEditable(false);
         jTextField2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField2.setEnabled(false);
 
         jButton3.setText("Pokaż odpowiedź");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -392,7 +392,7 @@ public class OknGlowne extends javax.swing.JFrame {
                     .addComponent(jButton3))
                 .addGap(37, 37, 37)
                 .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jPanel_edytujSlownik.setPreferredSize(new java.awt.Dimension(460, 400));
