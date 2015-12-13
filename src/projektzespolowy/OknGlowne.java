@@ -63,6 +63,7 @@ public class OknGlowne extends javax.swing.JFrame {
         jButton_ocena4 = new javax.swing.JButton();
         jButton_ocena5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jPanel_edytujSlownik = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
@@ -87,6 +88,7 @@ public class OknGlowne extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_plik = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem_zakoncz = new javax.swing.JMenuItem();
         jMenu_narzedzia = new javax.swing.JMenu();
         jMenuItem_edytujSlownik = new javax.swing.JMenuItem();
@@ -366,27 +368,38 @@ public class OknGlowne extends javax.swing.JFrame {
                 .addGap(56, 56, 56))
         );
 
+        jButton6.setText("Cofnij");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_fiszkiNaukaLayout = new javax.swing.GroupLayout(jPanel_fiszkiNauka);
         jPanel_fiszkiNauka.setLayout(jPanel_fiszkiNaukaLayout);
         jPanel_fiszkiNaukaLayout.setHorizontalGroup(
             jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_fiszkiNaukaLayout.createSequentialGroup()
+                .addContainerGap(88, Short.MAX_VALUE)
+                .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
             .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton6)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(22, 22, 22)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
-                .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
         );
         jPanel_fiszkiNaukaLayout.setVerticalGroup(
             jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addGap(26, 26, 26)
+                .addComponent(jButton6)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -592,6 +605,14 @@ public class OknGlowne extends javax.swing.JFrame {
         });
         jMenu_plik.add(jMenuItem1);
 
+        jMenuItem2.setText("Wyloguj");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu_plik.add(jMenuItem2);
+
         jMenuItem_zakoncz.setText("Zakończ");
         jMenuItem_zakoncz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -714,7 +735,7 @@ System.exit(0);
     }//GEN-LAST:event_jTextField_loginActionPerformed
 
     private void jMenuItem_oProgramieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_oProgramieActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.5 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
+        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.5.2 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
     }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     private void jButton_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zalogujActionPerformed
@@ -815,6 +836,25 @@ System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField2ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jPanel_rejestracja.setVisible(false);
+        jPanel_logowanie.setVisible(false);
+        jPanel_fiszkiWybor.setVisible(true);
+        jPanel_fiszkiNauka.setVisible(false);
+        jPanel_ocena.setVisible(false);
+        jPanel_start.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        jPanel_rejestracja.setVisible(false);
+        jPanel_logowanie.setVisible(false);
+        jPanel_fiszkiWybor.setVisible(false);
+        jPanel_fiszkiNauka.setVisible(false);
+        jPanel_ocena.setVisible(false);
+        jPanel_start.setVisible(true);
+        jMenuItem_edytujSlownik.setEnabled(false);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -868,6 +908,7 @@ System.exit(0);
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton_dodajSlownik;
     private javax.swing.JButton jButton_edytuj;
     private javax.swing.JButton jButton_edytujSlownik;
@@ -894,6 +935,7 @@ System.exit(0);
     private javax.swing.JList jList3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem_edytujSlownik;
     private javax.swing.JMenuItem jMenuItem_oProgramie;
     private javax.swing.JMenuItem jMenuItem_zakoncz;
