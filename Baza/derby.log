@@ -1,7 +1,71 @@
-Fri Dec 11 20:46:45 CET 2015 : Serwer sieciowy Apache Derby - 10.10.2.0 - (1582446) uruchomiony i gotowy do zaakceptowania po³¹czeñ na porcie 1527 w {3} 
+Sun Dec 13 21:58:11 CET 2015 : Serwer sieciowy Apache Derby - 10.10.2.0 - (1582446) uruchomiony i gotowy do zaakceptowania po³¹czeñ na porcie 1527 w {3} 
 ----------------------------------------------------------------
-Fri Dec 11 20:46:45 CET 2015:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) systemu Derby: instancja a816c00e-0151-9294-d267-ffff8d39f96c
+Sun Dec 13 21:58:12 CET 2015:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) systemu Derby: instancja a816c00e-0151-9d22-f1a1-ffff8d39f96c
+w katalogu bazy danych C:\Users\Morsad\Documents\NetBeansProjects\ProjektZespolowy\Baza\BazaPizzerii sun.misc.Launcher$AppClassLoader@5e2de80c 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_66-b18
+user.dir=C:\Program Files\glassfish-4.1\javadb
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=C:\Users\Morsad\Documents\NetBeansProjects\ProjektZespolowy\Baza
+Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
+Sun Dec 13 21:58:13 CET 2015 Thread[DRDAConnThread_2,5,main] (XID = 558), (SESSIONID = 0), (DATABASE = BazaPizzerii), (DRDAID = {1}), Cleanup action starting
+java.sql.SQLNonTransientConnectionException: Uwierzytelnianie po³¹czenia nie powiod³o siê. Przyczyna: Niepoprawne uwierzytelnianie..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Caused by: java.sql.SQLException: Uwierzytelnianie po³¹czenia nie powiod³o siê. Przyczyna: Niepoprawne uwierzytelnianie..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 19 more
+============= begin nested exception, level (1) ===========
+java.sql.SQLException: Uwierzytelnianie po³¹czenia nie powiod³o siê. Przyczyna: Niepoprawne uwierzytelnianie..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.Driver20.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+Sun Dec 13 21:58:13 CET 2015 Thread[DRDAConnThread_2,5,main] (DATABASE = BazaPizzerii), (DRDAID = {1}), Uwierzytelnianie po³¹czenia nie powiod³o siê. Przyczyna: Niepoprawne uwierzytelnianie..
+----------------------------------------------------------------
+Sun Dec 13 22:51:45 CET 2015:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) systemu Derby: instancja 69ea408f-0151-9d22-f1a1-ffff8d39f96c
 w katalogu bazy danych C:\Users\Morsad\Documents\NetBeansProjects\ProjektZespolowy\Baza\Baza sun.misc.Launcher$AppClassLoader@5e2de80c 
 
 java.vendor=Oracle Corporation
@@ -13,8 +77,4 @@ os.version=6.1
 derby.system.home=C:\Users\Morsad\Documents\NetBeansProjects\ProjektZespolowy\Baza
 Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
 ----------------------------------------------------------------
-Fri Dec 11 20:46:53 CET 2015: Shutting down Derby engine
-----------------------------------------------------------------
-Fri Dec 11 20:46:53 CET 2015:
-Wy³¹czanie instancji a816c00e-0151-9294-d267-ffff8d39f96c
-----------------------------------------------------------------
+Sun Dec 13 22:58:48 CET 2015: Shutting down Derby engine
