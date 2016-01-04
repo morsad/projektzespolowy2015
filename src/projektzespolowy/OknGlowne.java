@@ -779,7 +779,7 @@ System.exit(0);
     }//GEN-LAST:event_jTextField_loginActionPerformed
 
     private void jMenuItem_oProgramieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_oProgramieActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.5.2 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
+        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.5.3 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
     }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     private void jButton_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zalogujActionPerformed
