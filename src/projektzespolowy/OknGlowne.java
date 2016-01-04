@@ -7,7 +7,9 @@ package projektzespolowy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class OknGlowne extends javax.swing.JFrame {
@@ -52,8 +54,8 @@ public class OknGlowne extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jPanel_fiszkiNauka = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField_fiszkiNauka_1slowko = new javax.swing.JTextField();
+        jTextField_fiszkiNauka_2slowko = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jPanel_ocena = new javax.swing.JPanel();
         jButton_ocena0 = new javax.swing.JButton();
@@ -63,7 +65,9 @@ public class OknGlowne extends javax.swing.JFrame {
         jButton_ocena4 = new javax.swing.JButton();
         jButton_ocena5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        jButton_fiszkiNauka_cofnij = new javax.swing.JButton();
+        jButton_fiszkiNauka_Edytuj = new javax.swing.JButton();
+        jButton_fiszkiNauka_Zapisz = new javax.swing.JButton();
         jPanel_edytujSlownik = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
@@ -75,6 +79,7 @@ public class OknGlowne extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton_zapisz = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
         jPanel_rejestracja = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -103,7 +108,8 @@ public class OknGlowne extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setMinimumSize(new java.awt.Dimension(480, 400));
-        setPreferredSize(new java.awt.Dimension(480, 400));
+        setPreferredSize(new java.awt.Dimension(460, 420));
+        setResizable(false);
 
         jPanel_start.setPreferredSize(new java.awt.Dimension(460, 400));
 
@@ -285,16 +291,16 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jPanel_fiszkiNauka.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jTextField1.setEditable(false);
-        jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_fiszkiNauka_1slowko.setEditable(false);
+        jTextField_fiszkiNauka_1slowko.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField_fiszkiNauka_1slowko.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextField_fiszkiNauka_1slowkoActionPerformed(evt);
             }
         });
 
-        jTextField2.setEditable(false);
-        jTextField2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField_fiszkiNauka_2slowko.setEditable(false);
+        jTextField_fiszkiNauka_2slowko.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         jButton3.setText("Pokaż odpowiedź");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -368,10 +374,25 @@ public class OknGlowne extends javax.swing.JFrame {
                 .addGap(56, 56, 56))
         );
 
-        jButton6.setText("Cofnij");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButton_fiszkiNauka_cofnij.setText("Cofnij");
+        jButton_fiszkiNauka_cofnij.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButton_fiszkiNauka_cofnijActionPerformed(evt);
+            }
+        });
+
+        jButton_fiszkiNauka_Edytuj.setText("Edytuj");
+        jButton_fiszkiNauka_Edytuj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_fiszkiNauka_EdytujActionPerformed(evt);
+            }
+        });
+
+        jButton_fiszkiNauka_Zapisz.setText("Zapisz");
+        jButton_fiszkiNauka_Zapisz.setEnabled(false);
+        jButton_fiszkiNauka_Zapisz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_fiszkiNauka_ZapiszActionPerformed(evt);
             }
         });
 
@@ -384,27 +405,38 @@ public class OknGlowne extends javax.swing.JFrame {
                 .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88))
             .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(22, 22, 22)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton_fiszkiNauka_cofnij)
+                            .addComponent(jTextField_fiszkiNauka_1slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField_fiszkiNauka_2slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_fiszkiNauka_Edytuj)))
+                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(jButton_fiszkiNauka_Zapisz)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel_fiszkiNaukaLayout.setVerticalGroup(
             jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jButton6)
+                .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_fiszkiNauka_cofnij)
+                    .addComponent(jButton_fiszkiNauka_Edytuj))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_fiszkiNauka_1slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_fiszkiNauka_2slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton_fiszkiNauka_Zapisz)
+                .addGap(3, 3, 3)
                 .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
@@ -457,6 +489,13 @@ public class OknGlowne extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Zakończ edycje");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_edytujSlownikLayout = new javax.swing.GroupLayout(jPanel_edytujSlownik);
         jPanel_edytujSlownik.setLayout(jPanel_edytujSlownikLayout);
         jPanel_edytujSlownikLayout.setHorizontalGroup(
@@ -476,11 +515,14 @@ public class OknGlowne extends javax.swing.JFrame {
                                     .addComponent(jButton_dodajSlownik)))
                             .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
                                 .addGap(28, 28, 28)
-                                .addComponent(jButton_edytuj)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))))
+                                .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton7)
+                                    .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
+                                        .addComponent(jButton_edytuj)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))))))
                         .addGap(28, 28, 28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_edytujSlownikLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -511,7 +553,9 @@ public class OknGlowne extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton_zapisz))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(50, 50, 50))
         );
 
         jLabel3.setText("Hasło");
@@ -613,7 +657,7 @@ public class OknGlowne extends javax.swing.JFrame {
         });
         jMenu_plik.add(jMenuItem2);
 
-        jMenuItem_zakoncz.setText("Zakończ");
+        jMenuItem_zakoncz.setText("Zakończ program");
         jMenuItem_zakoncz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem_zakonczActionPerformed(evt);
@@ -739,12 +783,42 @@ System.exit(0);
     }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     private void jButton_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zalogujActionPerformed
+      String login=jTextField_login.getText();
+        String haslo=jTextField_haslo.getText();
+        String [] llogin=new String[10];
+        String [] hhaslo=new String[10];
+       try{
+            String host= "jdbc:derby://localhost:1527/Baza";
+            String uName = "admin93";
+            String uPass= "admin";
+            Connection con = DriverManager.getConnection( host, uName, uPass );
+            Statement stmt = con.createStatement( );
+            String SQL = "select * from ADMIN93.LOGOWANIE";
+            ResultSet rs = stmt.executeQuery( SQL );
+            
+           for(int i=0;i<10;i++){
+            rs.next( );
+            int id_col = rs.getInt("ID");
+            llogin[i]= rs.getString("LOGIN");
+            hhaslo[i] = rs.getString("HASLO");}
+           
+            
+            
+        }
+        catch (SQLException err) {
+            System.out.println(err.getMessage());
+        }
+       for(int i=0;i<10;i++)
+       if(login.equals(llogin[i])){
+           if(haslo.equals(hhaslo[i])){
+           
         jPanel_fiszkiWybor.setVisible(true);
         jPanel_logowanie.setVisible(false);        
         jPanel_fiszkiNauka.setVisible(false);
         jPanel_ocena.setVisible(false);
         jPanel_start.setVisible(false);
-        jMenuItem_edytujSlownik.setEnabled(true);
+        jMenuItem_edytujSlownik.setEnabled(true);}
+       }
     }//GEN-LAST:event_jButton_zalogujActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -819,11 +893,12 @@ System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField_fiszkiNauka_1slowkoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_fiszkiNauka_1slowkoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextField_fiszkiNauka_1slowkoActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        jPanel_edytujSlownik.setVisible(false);
         jPanel_rejestracja.setVisible(false);
         jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(false);
@@ -836,14 +911,14 @@ System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField2ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButton_fiszkiNauka_cofnijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_cofnijActionPerformed
         jPanel_rejestracja.setVisible(false);
         jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(true);
         jPanel_fiszkiNauka.setVisible(false);
         jPanel_ocena.setVisible(false);
         jPanel_start.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jButton_fiszkiNauka_cofnijActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         jPanel_rejestracja.setVisible(false);
@@ -853,7 +928,31 @@ System.exit(0);
         jPanel_ocena.setVisible(false);
         jPanel_start.setVisible(true);
         jMenuItem_edytujSlownik.setEnabled(false);
+        jTextField_login.setText(null);
+        jTextField_haslo.setText(null);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        jPanel_edytujSlownik.setVisible(false);
+        jPanel_rejestracja.setVisible(false);
+        jPanel_logowanie.setVisible(false);
+        jPanel_fiszkiWybor.setVisible(false);
+        jPanel_fiszkiNauka.setVisible(false);
+        jPanel_ocena.setVisible(false);
+        jPanel_start.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton_fiszkiNauka_EdytujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_EdytujActionPerformed
+       jTextField_fiszkiNauka_1slowko.setEditable(true);
+       jTextField_fiszkiNauka_2slowko.setEditable(true);
+       jButton_fiszkiNauka_Zapisz.setEnabled(true);
+    }//GEN-LAST:event_jButton_fiszkiNauka_EdytujActionPerformed
+
+    private void jButton_fiszkiNauka_ZapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_ZapiszActionPerformed
+       jTextField_fiszkiNauka_1slowko.setEditable(false);
+       jTextField_fiszkiNauka_2slowko.setEditable(false);
+       jButton_fiszkiNauka_Zapisz.setEnabled(false);
+    }//GEN-LAST:event_jButton_fiszkiNauka_ZapiszActionPerformed
 
     /**
      * @param args the command line arguments
@@ -908,10 +1007,13 @@ System.exit(0);
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton_dodajSlownik;
     private javax.swing.JButton jButton_edytuj;
     private javax.swing.JButton jButton_edytujSlownik;
+    private javax.swing.JButton jButton_fiszkiNauka_Edytuj;
+    private javax.swing.JButton jButton_fiszkiNauka_Zapisz;
+    private javax.swing.JButton jButton_fiszkiNauka_cofnij;
     private javax.swing.JButton jButton_ocena0;
     private javax.swing.JButton jButton_ocena1;
     private javax.swing.JButton jButton_ocena2;
@@ -953,12 +1055,12 @@ System.exit(0);
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField_fiszkiNauka_1slowko;
+    private javax.swing.JTextField jTextField_fiszkiNauka_2slowko;
     private javax.swing.JPasswordField jTextField_haslo;
     private javax.swing.JTextField jTextField_login;
     // End of variables declaration//GEN-END:variables
