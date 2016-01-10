@@ -22,7 +22,7 @@ public class OknGlowne extends javax.swing.JFrame {
      */
     public OknGlowne() {
         initComponents();
-        jPanel_logowanie.setVisible(false);        
+        jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_fiszkiNauka.setVisible(false);
         jPanel_ocena.setVisible(false);
@@ -224,7 +224,7 @@ public class OknGlowne extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel_logowanieLayout.createSequentialGroup()
                         .addGroup(jPanel_logowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField_haslo, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                            .addComponent(jTextField_haslo, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
                             .addComponent(jTextField_login))
                         .addGap(187, 187, 187))))
         );
@@ -257,7 +257,11 @@ public class OknGlowne extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Słownik1", "Słownik2", "Słownik3" }));
+        try {
+            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(Slownik.getTitles()));
+        } catch (SQLException ex) {
+            Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -756,12 +760,12 @@ public class OknGlowne extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem_zakonczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_zakonczActionPerformed
-System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jMenuItem_zakonczActionPerformed
 
     private void jMenuItem_edytujSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_edytujSlownikActionPerformed
         jPanel_edytujSlownik.setVisible(true);
-        jPanel_logowanie.setVisible(false);        
+        jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_fiszkiNauka.setVisible(false);
         jPanel_ocena.setVisible(false);
@@ -786,54 +790,54 @@ System.exit(0);
     }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     private void jButton_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zalogujActionPerformed
-      String login=jTextField_login.getText();
-        String haslo=jTextField_haslo.getText();
-        String [] llogin=new String[10];
-        String [] hhaslo=new String[10];
-       try{
-            String host= "jdbc:derby://localhost:1527/Baza";
+        String login = jTextField_login.getText();
+        String haslo = jTextField_haslo.getText();
+        String[] llogin = new String[10];
+        String[] hhaslo = new String[10];
+        try {
+            String host = "jdbc:derby://localhost:1527/Baza";
             String uName = "admin93";
-            String uPass= "admin";
-            Connection con = DriverManager.getConnection( host, uName, uPass );
-            Statement stmt = con.createStatement( );
+            String uPass = "admin";
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+            Statement stmt = con.createStatement();
             String SQL = "select * from ADMIN93.LOGOWANIE";
-            ResultSet rs = stmt.executeQuery( SQL );
-            
-           for(int i=0;i<10;i++){
-            rs.next( );
-            int id_col = rs.getInt("ID");
-            llogin[i]= rs.getString("LOGIN");
-            hhaslo[i] = rs.getString("HASLO");}
-           
-            
-            
-        }
-        catch (SQLException err) {
+            ResultSet rs = stmt.executeQuery(SQL);
+
+            for (int i = 0; i < 10; i++) {
+                rs.next();
+                int id_col = rs.getInt("ID");
+                llogin[i] = rs.getString("LOGIN");
+                hhaslo[i] = rs.getString("HASLO");
+            }
+
+        } catch (SQLException err) {
             System.out.println(err.getMessage());
         }
-       for(int i=0;i<10;i++)
-       if(login.equals(llogin[i])){
-           if(haslo.equals(hhaslo[i])){
-           
-        jPanel_fiszkiWybor.setVisible(true);
-        jPanel_logowanie.setVisible(false);        
-        jPanel_fiszkiNauka.setVisible(false);
-        jPanel_ocena.setVisible(false);
-        jPanel_start.setVisible(false);
-        jMenuItem_edytujSlownik.setEnabled(true);}
-       }
+        for (int i = 0; i < 10; i++) {
+            if (login.equals(llogin[i])) {
+                if (haslo.equals(hhaslo[i])) {
+
+                    jPanel_fiszkiWybor.setVisible(true);
+                    jPanel_logowanie.setVisible(false);
+                    jPanel_fiszkiNauka.setVisible(false);
+                    jPanel_ocena.setVisible(false);
+                    jPanel_start.setVisible(false);
+                    jMenuItem_edytujSlownik.setEnabled(true);
+                }
+            }
+        }
     }//GEN-LAST:event_jButton_zalogujActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jPanel_fiszkiNauka.setVisible(true);
-        jPanel_logowanie.setVisible(false);        
+        jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jPanel_ocena.setVisible(true);
-        jPanel_logowanie.setVisible(false);        
+        jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -849,7 +853,7 @@ System.exit(0);
     private void jButton_edytujSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_edytujSlownikActionPerformed
         jButton_edytuj.setEnabled(true);
         jButton_zapisz.setEnabled(true);
-        
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton_edytujSlownikActionPerformed
 
@@ -978,33 +982,32 @@ System.exit(0);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton_fiszkiNauka_EdytujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_EdytujActionPerformed
-       jTextField_fiszkiNauka_1slowko.setEditable(true);
-       jTextField_fiszkiNauka_2slowko.setEditable(true);
-       jButton_fiszkiNauka_Zapisz.setEnabled(true);
+        jTextField_fiszkiNauka_1slowko.setEditable(true);
+        jTextField_fiszkiNauka_2slowko.setEditable(true);
+        jButton_fiszkiNauka_Zapisz.setEnabled(true);
     }//GEN-LAST:event_jButton_fiszkiNauka_EdytujActionPerformed
 
     private void jButton_fiszkiNauka_ZapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_ZapiszActionPerformed
-       jTextField_fiszkiNauka_1slowko.setEditable(false);
-       jTextField_fiszkiNauka_2slowko.setEditable(false);
-       jButton_fiszkiNauka_Zapisz.setEnabled(false);
+        jTextField_fiszkiNauka_1slowko.setEditable(false);
+        jTextField_fiszkiNauka_2slowko.setEditable(false);
+        jButton_fiszkiNauka_Zapisz.setEnabled(false);
     }//GEN-LAST:event_jButton_fiszkiNauka_ZapiszActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        try{
-            String host= "jdbc:derby://localhost:1527/Baza";
+
+        try {
+            String host = "jdbc:derby://localhost:1527/Baza";
             String uName = "admin93";
-            String uPass= "admin";
-        
-        Connection con=DriverManager.getConnection(host, uName, uPass);
-        }
-        catch (SQLException err) {
+            String uPass = "admin";
+
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+        } catch (SQLException err) {
             System.out.println(err.getMessage());
         }
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
