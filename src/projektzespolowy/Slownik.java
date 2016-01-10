@@ -16,7 +16,7 @@ public class Slownik {
         stmt = con.createStatement();
 
         String query = "select NAZWA_SLOWNIKA from ADMIN93.LISTA_SLOWNIKOW";
-        ArrayList<String> suma = new ArrayList<String>();
+        ArrayList<String> suma = new ArrayList<>();
         ResultSet rs = stmt.executeQuery(query);
         while (rs.next()) {
             String nazw = rs.getString("NAZWA_SLOWNIKA");
