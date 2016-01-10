@@ -805,7 +805,6 @@ public class OknGlowne extends javax.swing.JFrame {
 
             for (int i = 0; i < 10; i++) {
                 rs.next();
-                int id_col = rs.getInt("ID");
                 llogin[i] = rs.getString("LOGIN");
                 hhaslo[i] = rs.getString("HASLO");
             }
