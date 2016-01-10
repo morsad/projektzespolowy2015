@@ -7,9 +7,12 @@ package projektzespolowy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class OknGlowne extends javax.swing.JFrame {
@@ -85,11 +88,11 @@ public class OknGlowne extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        jTextField_RLogin = new javax.swing.JTextField();
+        jTextField_REmail = new javax.swing.JTextField();
+        jButton_Zarejestruj = new javax.swing.JButton();
+        jPasswordField_RHaslo = new javax.swing.JPasswordField();
+        jPasswordField_RHaslo2 = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_plik = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -566,24 +569,24 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jLabel8.setText("Email");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_RLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                jTextField_RLoginActionPerformed(evt);
             }
         });
 
-        jTextField8.setToolTipText("");
+        jTextField_REmail.setToolTipText("");
 
-        jButton5.setText("Zarejestruj");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButton_Zarejestruj.setText("Zarejestruj");
+        jButton_Zarejestruj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButton_ZarejestrujActionPerformed(evt);
             }
         });
 
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        jPasswordField_RHaslo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                jPasswordField_RHaslo2ActionPerformed(evt);
             }
         });
 
@@ -600,14 +603,14 @@ public class OknGlowne extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(jTextField8)
-                    .addComponent(jPasswordField1)
-                    .addComponent(jPasswordField2))
+                    .addComponent(jTextField_RLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(jTextField_REmail)
+                    .addComponent(jPasswordField_RHaslo)
+                    .addComponent(jPasswordField_RHaslo2))
                 .addContainerGap(176, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_rejestracjaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(jButton_Zarejestruj)
                 .addGap(117, 117, 117))
         );
         jPanel_rejestracjaLayout.setVerticalGroup(
@@ -615,22 +618,22 @@ public class OknGlowne extends javax.swing.JFrame {
             .addGroup(jPanel_rejestracjaLayout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_RLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordField_RHaslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPasswordField_RHaslo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rejestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField_REmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
-                .addComponent(jButton5)
+                .addComponent(jButton_Zarejestruj)
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
@@ -866,19 +869,51 @@ System.exit(0);
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void jTextField_RLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_RLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_jTextField_RLoginActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Zarejestrowano!");
-        jPanel_rejestracja.setVisible(false);
-        jPanel_logowanie.setVisible(false);
-        jPanel_fiszkiWybor.setVisible(false);
-        jPanel_fiszkiNauka.setVisible(false);
-        jPanel_ocena.setVisible(false);
-        jPanel_start.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jButton_ZarejestrujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ZarejestrujActionPerformed
+        Connection con = null;
+        PreparedStatement pst = null;
+
+        String url = "jdbc:derby://localhost:1527/Baza";
+        String user = "admin93";
+        String password = "admin";
+
+        try {
+
+            String login = jTextField_RLogin.getText();
+            String haslo = jPasswordField_RHaslo.getText();
+            String haslo2 = jPasswordField_RHaslo2.getText();
+            String email = jTextField_REmail.getText();
+            if(!(haslo.equals(haslo2)))
+                JOptionPane.showMessageDialog(null, "HASŁA SIĘ RÓŻNIĄ");
+            else{
+            
+            con = DriverManager.getConnection(url, user, password);
+
+            pst = con.prepareStatement("INSERT INTO LOGOWANIE VALUES(?,?,?)");
+            pst.setString(1, login);
+            pst.setString(2, haslo);
+            pst.setString(3, email);
+            pst.executeUpdate();
+            
+            JOptionPane.showMessageDialog(rootPane, "Zarejestrowano!");
+            jPanel_rejestracja.setVisible(false);
+            jPanel_logowanie.setVisible(false);
+            jPanel_fiszkiWybor.setVisible(false);
+            jPanel_fiszkiNauka.setVisible(false);
+            jPanel_ocena.setVisible(false);
+            jPanel_start.setVisible(true);
+            }
+
+        } catch (SQLException ex) {
+            Logger lgr = Logger.getLogger(OknGlowne.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+        }
+    }//GEN-LAST:event_jButton_ZarejestrujActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jPanel_rejestracja.setVisible(true);
@@ -907,9 +942,9 @@ System.exit(0);
         jPanel_start.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void jPasswordField_RHaslo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_RHaslo2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_jPasswordField_RHaslo2ActionPerformed
 
     private void jButton_fiszkiNauka_cofnijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_cofnijActionPerformed
         jPanel_rejestracja.setVisible(false);
@@ -1006,8 +1041,8 @@ System.exit(0);
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton_Zarejestruj;
     private javax.swing.JButton jButton_dodajSlownik;
     private javax.swing.JButton jButton_edytuj;
     private javax.swing.JButton jButton_edytujSlownik;
@@ -1051,14 +1086,14 @@ System.exit(0);
     private javax.swing.JPanel jPanel_ocena;
     private javax.swing.JPanel jPanel_rejestracja;
     private javax.swing.JPanel jPanel_start;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField jPasswordField_RHaslo;
+    private javax.swing.JPasswordField jPasswordField_RHaslo2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField_REmail;
+    private javax.swing.JTextField jTextField_RLogin;
     private javax.swing.JTextField jTextField_fiszkiNauka_1slowko;
     private javax.swing.JTextField jTextField_fiszkiNauka_2slowko;
     private javax.swing.JPasswordField jTextField_haslo;

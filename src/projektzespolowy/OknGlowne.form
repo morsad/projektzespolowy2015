@@ -875,16 +875,16 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextField6" pref="185" max="32767" attributes="0"/>
-                      <Component id="jTextField8" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jPasswordField2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTextField_RLogin" pref="185" max="32767" attributes="0"/>
+                      <Component id="jTextField_REmail" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPasswordField_RHaslo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPasswordField_RHaslo2" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="176" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton_Zarejestruj" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -894,26 +894,26 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField_RLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPasswordField_RHaslo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPasswordField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPasswordField_RHaslo2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField_REmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton_Zarejestruj" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="105" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -940,29 +940,29 @@
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="jTextField_RLogin">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_RLoginActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="jTextField_REmail">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="jButton_Zarejestruj">
           <Properties>
             <Property name="text" type="java.lang.String" value="Zarejestruj"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_ZarejestrujActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+        <Component class="javax.swing.JPasswordField" name="jPasswordField_RHaslo">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField2">
+        <Component class="javax.swing.JPasswordField" name="jPasswordField_RHaslo2">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPasswordField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPasswordField_RHaslo2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
