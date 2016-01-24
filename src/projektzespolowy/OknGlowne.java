@@ -88,7 +88,6 @@ public class OknGlowne extends javax.swing.JFrame {
         jButton_dodajSlownik = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList();
-        jButton_edytuj = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jButton_zapisz = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
@@ -389,13 +388,7 @@ public class OknGlowne extends javax.swing.JFrame {
         jTextField2.setText("99");
         jTextField2.setEnabled(false);
 
-        jTextField1.setText("SSSS");
         jTextField1.setEnabled(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jLabel11.setText("Liczba słowek");
 
@@ -503,9 +496,6 @@ public class OknGlowne extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jList3);
 
-        jButton_edytuj.setText("Edytuj");
-        jButton_edytuj.setEnabled(false);
-
         jButton_zapisz.setText("Zapisz");
         jButton_zapisz.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton_zapisz.setEnabled(false);
@@ -561,8 +551,7 @@ public class OknGlowne extends javax.swing.JFrame {
                                         .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jButton7)
                                             .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                                                .addComponent(jButton_edytuj)
-                                                .addGap(18, 18, 18)
+                                                .addGap(81, 81, 81)
                                                 .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                                                     .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))))))
@@ -594,14 +583,9 @@ public class OknGlowne extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                        .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jButton_edytuj)))
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton_zapisz))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -873,11 +857,14 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(false);
         jPanel_start.setVisible(false);
+        
+        String n=jComboBox1.getSelectedItem().toString();
+        jTextField1.setText(n);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        String[] pl = new String[10];
-        String sl= jTextField2.getText();
+        String sl= jTextField1.getText();
         int z=0;
         
         try {
@@ -908,12 +895,12 @@ public class OknGlowne extends javax.swing.JFrame {
         for(int i=0;i<10-z;i++){
             ppl[i]=pl[i];   
         }
-        String liczb=jTextField1.getText();
+        String liczb=jTextField2.getText();
         int liczba =Integer.parseInt(liczb);
         if(ppl.length<liczba){
         String d = Integer.toString(ppl.length);
-        jTextField1.setText(d);}
-        String licz=jTextField1.getText();
+        jTextField2.setText(d);}
+        String licz=jTextField2.getText();
         int dl =Integer.parseInt(licz);
         if(dl==0){
            JOptionPane.showMessageDialog(null, "KONIEC");
@@ -957,7 +944,7 @@ public class OknGlowne extends javax.swing.JFrame {
         int dlu =Integer.parseInt(licz);
         dlu--;
         String j = Integer.toString(dlu);
-        jTextField1.setText(j);
+        jTextField2.setText(j);
         
         jPanel_ocena.setVisible(true);
         jPanel_logowanie.setVisible(false);
@@ -968,7 +955,7 @@ public class OknGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton_edytujSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_edytujSlownikActionPerformed
-        jButton_edytuj.setEnabled(true);
+        
         jButton_zapisz.setEnabled(true);
         
 
@@ -1326,10 +1313,6 @@ public class OknGlowne extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1385,7 +1368,6 @@ public class OknGlowne extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton_Zarejestruj;
     private javax.swing.JButton jButton_dodajSlownik;
-    private javax.swing.JButton jButton_edytuj;
     private javax.swing.JButton jButton_edytujSlownik;
     private javax.swing.JButton jButton_fiszkiNauka_Edytuj;
     private javax.swing.JButton jButton_fiszkiNauka_Zapisz;
