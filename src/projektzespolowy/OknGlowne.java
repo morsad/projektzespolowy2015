@@ -5,6 +5,7 @@
  */
 package projektzespolowy;
 
+import java.awt.event.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,7 +14,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.*;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.ListModel;
 
 public class OknGlowne extends javax.swing.JFrame {
 
@@ -28,7 +34,6 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_ocena.setVisible(false);
         jPanel_edytujSlownik.setVisible(false);
         jPanel_rejestracja.setVisible(false);
-
 
     }
 
@@ -177,21 +182,15 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_logowanie.setMinimumSize(new java.awt.Dimension(460, 400));
         jPanel_logowanie.setName(""); // NOI18N
         jPanel_logowanie.setPreferredSize(new java.awt.Dimension(460, 400));
-        jPanel_logowanie.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                jPanel_logowanieComponentHidden(evt);
+        jPanel_logowanie.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel_logowanieKeyPressed(evt);
             }
         });
 
-        jTextField_login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_loginActionPerformed(evt);
-            }
-        });
-
-        jTextField_haslo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_hasloActionPerformed(evt);
+        jTextField_haslo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField_hasloKeyPressed(evt);
             }
         });
 
@@ -257,16 +256,7 @@ public class OknGlowne extends javax.swing.JFrame {
             }
         });
 
-        try {
-            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(Slownik.getTitles()));
-        } catch (SQLException ex) {
-            Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
+        jComboBox1.setModel(new DefaultComboBoxModel());
 
         javax.swing.GroupLayout jPanel_fiszkiWyborLayout = new javax.swing.GroupLayout(jPanel_fiszkiWybor);
         jPanel_fiszkiWybor.setLayout(jPanel_fiszkiWyborLayout);
@@ -300,11 +290,6 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jTextField_fiszkiNauka_1slowko.setEditable(false);
         jTextField_fiszkiNauka_1slowko.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField_fiszkiNauka_1slowko.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_fiszkiNauka_1slowkoActionPerformed(evt);
-            }
-        });
 
         jTextField_fiszkiNauka_2slowko.setEditable(false);
         jTextField_fiszkiNauka_2slowko.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -317,22 +302,12 @@ public class OknGlowne extends javax.swing.JFrame {
         });
 
         jButton_ocena0.setText("0");
-        jButton_ocena0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_ocena0ActionPerformed(evt);
-            }
-        });
 
         jButton_ocena1.setText("1");
 
         jButton_ocena2.setText("2");
 
         jButton_ocena3.setText("3");
-        jButton_ocena3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_ocena3ActionPerformed(evt);
-            }
-        });
 
         jButton_ocena4.setText("4");
 
@@ -450,12 +425,13 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jPanel_edytujSlownik.setPreferredSize(new java.awt.Dimension(460, 400));
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Angielski", "Niemiecki", "Rosyjski" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
+        jList1.setModel(new DefaultListModel());
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
         jButton_edytujSlownik.setText("Edytuj słownik");
@@ -466,33 +442,30 @@ public class OknGlowne extends javax.swing.JFrame {
         });
 
         jButton_dodajSlownik.setText("Dodaj słownik");
-
-        jList3.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "dog", "cat", "yes", "no" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        jButton_dodajSlownik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_dodajSlownikActionPerformed(evt);
+            }
         });
+
+        jList3.setModel(new DefaultListModel());
         jList3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList3MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jList3);
 
         jButton_edytuj.setText("Edytuj");
         jButton_edytuj.setEnabled(false);
-        jButton_edytuj.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_edytujActionPerformed(evt);
-            }
-        });
 
-        jTextField3.setText("pies");
-
-        jButton_zapisz.setText("zapisz");
+        jButton_zapisz.setText("Zapisz");
         jButton_zapisz.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton_zapisz.setEnabled(false);
-
-        jTextField4.setText("dog");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jButton_zapisz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jButton_zapiszActionPerformed(evt);
             }
         });
 
@@ -573,24 +546,12 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jLabel8.setText("Email");
 
-        jTextField_RLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_RLoginActionPerformed(evt);
-            }
-        });
-
         jTextField_REmail.setToolTipText("");
 
         jButton_Zarejestruj.setText("Zarejestruj");
         jButton_Zarejestruj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_ZarejestrujActionPerformed(evt);
-            }
-        });
-
-        jPasswordField_RHaslo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField_RHaslo2ActionPerformed(evt);
             }
         });
 
@@ -764,29 +725,29 @@ public class OknGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem_zakonczActionPerformed
 
     private void jMenuItem_edytujSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_edytujSlownikActionPerformed
-        jPanel_edytujSlownik.setVisible(true);
-        jPanel_logowanie.setVisible(false);
-        jPanel_fiszkiWybor.setVisible(false);
-        jPanel_fiszkiNauka.setVisible(false);
-        jPanel_ocena.setVisible(false);
-        jPanel_start.setVisible(false);
-        // TODO add your handling code here:
+        try {
+            jPanel_edytujSlownik.setVisible(true);
+            jPanel_logowanie.setVisible(false);
+            jPanel_fiszkiWybor.setVisible(false);
+            jPanel_fiszkiNauka.setVisible(false);
+            jPanel_ocena.setVisible(false);
+            jPanel_start.setVisible(false);
+
+            Object[] lista = Slownik.getTitles();
+            DefaultListModel tr2 = (DefaultListModel) jList1.getModel();
+            tr2.clear();
+            for (Object p : lista) {
+                tr2.addElement(p);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_jMenuItem_edytujSlownikActionPerformed
 
-    private void jPanel_logowanieComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel_logowanieComponentHidden
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel_logowanieComponentHidden
-
-    private void jTextField_hasloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_hasloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_hasloActionPerformed
-
-    private void jTextField_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_loginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_loginActionPerformed
-
     private void jMenuItem_oProgramieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_oProgramieActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.5.3 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
+        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.9 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
     }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     private void jButton_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zalogujActionPerformed
@@ -822,6 +783,12 @@ public class OknGlowne extends javax.swing.JFrame {
                     jPanel_ocena.setVisible(false);
                     jPanel_start.setVisible(false);
                     jMenuItem_edytujSlownik.setEnabled(true);
+
+                    try {
+                        jComboBox1.setModel(new DefaultComboBoxModel(Slownik.getTitles()));
+                    } catch (SQLException ex) {
+                        Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
         }
@@ -841,28 +808,12 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton_ocena0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ocena0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_ocena0ActionPerformed
-
-    private void jButton_ocena3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ocena3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_ocena3ActionPerformed
-
     private void jButton_edytujSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_edytujSlownikActionPerformed
         jButton_edytuj.setEnabled(true);
         jButton_zapisz.setEnabled(true);
 
-// TODO add your handling code here:
+
     }//GEN-LAST:event_jButton_edytujSlownikActionPerformed
-
-    private void jButton_edytujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_edytujActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_edytujActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jPanel_logowanie.setVisible(true);
@@ -871,10 +822,6 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_ocena.setVisible(false);
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField_RLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_RLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_RLoginActionPerformed
 
     private void jButton_ZarejestrujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ZarejestrujActionPerformed
         Connection con = null;
@@ -890,25 +837,25 @@ public class OknGlowne extends javax.swing.JFrame {
             String haslo = jPasswordField_RHaslo.getText();
             String haslo2 = jPasswordField_RHaslo2.getText();
             String email = jTextField_REmail.getText();
-            if(!(haslo.equals(haslo2)))
+            if (!(haslo.equals(haslo2))) {
                 JOptionPane.showMessageDialog(null, "HASŁA SIĘ RÓŻNIĄ");
-            else{
-            
-            con = DriverManager.getConnection(url, user, password);
+            } else {
 
-            pst = con.prepareStatement("INSERT INTO LOGOWANIE VALUES(?,?,?)");
-            pst.setString(1, login);
-            pst.setString(2, haslo);
-            pst.setString(3, email);
-            pst.executeUpdate();
-            
-            JOptionPane.showMessageDialog(rootPane, "Zarejestrowano!");
-            jPanel_rejestracja.setVisible(false);
-            jPanel_logowanie.setVisible(false);
-            jPanel_fiszkiWybor.setVisible(false);
-            jPanel_fiszkiNauka.setVisible(false);
-            jPanel_ocena.setVisible(false);
-            jPanel_start.setVisible(true);
+                con = DriverManager.getConnection(url, user, password);
+
+                pst = con.prepareStatement("INSERT INTO LOGOWANIE VALUES(?,?,?)");
+                pst.setString(1, login);
+                pst.setString(2, haslo);
+                pst.setString(3, email);
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(rootPane, "Zarejestrowano!");
+                jPanel_rejestracja.setVisible(false);
+                jPanel_logowanie.setVisible(false);
+                jPanel_fiszkiWybor.setVisible(false);
+                jPanel_fiszkiNauka.setVisible(false);
+                jPanel_ocena.setVisible(false);
+                jPanel_start.setVisible(true);
             }
 
         } catch (SQLException ex) {
@@ -927,14 +874,6 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_start.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jTextField_fiszkiNauka_1slowkoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_fiszkiNauka_1slowkoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_fiszkiNauka_1slowkoActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         jPanel_edytujSlownik.setVisible(false);
         jPanel_rejestracja.setVisible(false);
@@ -944,10 +883,6 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_ocena.setVisible(false);
         jPanel_start.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jPasswordField_RHaslo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_RHaslo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField_RHaslo2ActionPerformed
 
     private void jButton_fiszkiNauka_cofnijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_cofnijActionPerformed
         jPanel_rejestracja.setVisible(false);
@@ -991,6 +926,185 @@ public class OknGlowne extends javax.swing.JFrame {
         jTextField_fiszkiNauka_2slowko.setEditable(false);
         jButton_fiszkiNauka_Zapisz.setEnabled(false);
     }//GEN-LAST:event_jButton_fiszkiNauka_ZapiszActionPerformed
+
+    private void jButton_dodajSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_dodajSlownikActionPerformed
+        JFrame dodawanie = new JFrame("Dodaj");
+        dodawanie.setSize(300, 100);
+        dodawanie.setVisible(true);
+        JPanel panel = new JPanel();
+        dodawanie.add(panel);
+        final JTextField teksty = new JTextField(10);
+        teksty.setEditable(true);
+        panel.add(teksty);
+        JButton przycisk = new JButton("Dodaj");
+        panel.add(przycisk);
+        przycisk.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String tx = teksty.getText();
+                    Statement stmt;
+                    String host = "jdbc:derby://localhost:1527/Baza";
+                    String uName = "admin93";
+                    String uPass = "admin";
+
+                    Connection con = DriverManager.getConnection(host, uName, uPass);
+
+                    stmt = con.createStatement();
+
+                    String query = "CREATE TABLE ADMIN93." + tx + " "
+                            + "(id INTEGER not NULL, "
+                            + " slowko VARCHAR(100), "
+                            + " tlumaczenie VARCHAR(100), "
+                            + " PRIMARY KEY ( id ))";
+
+                    stmt.executeUpdate(query);
+
+                    String query2 = "INSERT INTO ADMIN93.LISTA_SLOWNIKOW (NAZWA_SLOWNIKA, LOGIN) "
+                            + "VALUES ('" + tx + "','admin') ";
+
+                    stmt.executeUpdate(query2);
+
+                    Object[] lista = Slownik.getTitles();
+                    DefaultListModel tr2 = (DefaultListModel) jList1.getModel();
+                    tr2.clear();
+                    for (Object p : lista) {
+                        tr2.addElement(p);
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+
+
+    }//GEN-LAST:event_jButton_dodajSlownikActionPerformed
+
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+
+        try {
+
+            Statement stmt;
+            String host = "jdbc:derby://localhost:1527/Baza";
+            String uName = "admin93";
+            String uPass = "admin";
+
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+
+            stmt = con.createStatement();
+
+            int index = jList1.getSelectedIndex();
+            ListModel tr = jList1.getModel();
+            String text = (String) tr.getElementAt(index);
+
+            String query = "select SLOWKO from ADMIN93." + text;
+            ResultSet rs = stmt.executeQuery(query);
+
+            DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
+            tr2.clear();
+            while (rs.next()) {
+                String nazw = rs.getString("SLOWKO");
+                tr2.addElement(nazw);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_jList1MouseClicked
+
+    private void jList3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList3MouseClicked
+        try {
+            Statement stmt;
+            String host = "jdbc:derby://localhost:1527/Baza";
+            String uName = "admin93";
+            String uPass = "admin";
+
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+
+            stmt = con.createStatement();
+
+            int index2 = jList1.getSelectedIndex();
+            ListModel tr = jList1.getModel();
+            String text2 = (String) tr.getElementAt(index2);
+
+            int index = jList3.getSelectedIndex();
+            DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
+            String text = (String) tr2.getElementAt(index);
+            jTextField4.setText(text);
+            int j = index + 1;
+
+            String query = "select TLUMACZENIE  from ADMIN93." + text2 + " where ID =" + j;
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                String nazw = rs.getString("TLUMACZENIE");
+                jTextField3.setText(nazw);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_jList3MouseClicked
+
+    private void jPanel_logowanieKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel_logowanieKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            jButton_zalogujActionPerformed(null);
+        }
+    }//GEN-LAST:event_jPanel_logowanieKeyPressed
+
+    private void jTextField_hasloKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_hasloKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            jButton_zalogujActionPerformed(null);
+        }
+    }//GEN-LAST:event_jTextField_hasloKeyPressed
+
+    private void jButton_zapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zapiszActionPerformed
+        try {
+            String word = jTextField4.getText();
+            String trans = jTextField3.getText();
+
+            int index = jList3.getSelectedIndex();
+            DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
+            String text = (String) tr2.getElementAt(index);
+            jTextField4.setText(text);
+            int j = index + 1;
+
+            int index2 = jList1.getSelectedIndex();
+            ListModel tr = jList1.getModel();
+            String text2 = (String) tr.getElementAt(index2);
+
+            Statement stmt;
+            String host = "jdbc:derby://localhost:1527/Baza";
+            String uName = "admin93";
+            String uPass = "admin";
+
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+
+            stmt = con.createStatement();
+            String query = "UPDATE ADMIN93." + text2 + " "
+                    + "SET SLOWKO='" + word + "', TLUMACZENIE='" + trans + "'"
+                    + "WHERE ID=" + j;
+
+            stmt.executeUpdate(query);
+
+            String query2 = "select SLOWKO from ADMIN93." + text2;
+            ResultSet rs = stmt.executeQuery(query2);
+
+            tr2.clear();
+            while (rs.next()) {
+                String nazw = rs.getString("SLOWKO");
+                tr2.addElement(nazw);
+            }
+
+            jTextField4.setText("");
+            jTextField3.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton_zapiszActionPerformed
 
     /**
      * @param args the command line arguments
