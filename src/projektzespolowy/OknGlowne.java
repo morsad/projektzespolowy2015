@@ -1108,9 +1108,35 @@ public class OknGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_fiszkiNauka_EdytujActionPerformed
 
     private void jButton_fiszkiNauka_ZapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_fiszkiNauka_ZapiszActionPerformed
-        jTextField_fiszkiNauka_1slowko.setEditable(false);
-        jTextField_fiszkiNauka_2slowko.setEditable(false);
-        jButton_fiszkiNauka_Zapisz.setEnabled(false);
+        try {
+            
+            
+            String word = jTextField_fiszkiNauka_1slowko.getText();
+            String trans = jTextField_fiszkiNauka_2slowko.getText();
+            String slw = jTextField1.getText();
+            
+            Statement stmt;
+            String host = "jdbc:derby://localhost:1527/Baza";
+            String uName = "admin93";
+            String uPass = "admin";
+            
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+            
+            stmt = con.createStatement();
+            String query = "UPDATE ADMIN93." + slw + " "
+                    + "SET SLOWKO='" + word + "', TLUMACZENIE='" + trans + "'"
+                    + "WHERE SLOWKO='" + word+"'";
+            
+            stmt.executeUpdate(query);
+            
+            jTextField_fiszkiNauka_1slowko.setEditable(false);
+            jTextField_fiszkiNauka_2slowko.setEditable(false);
+            jButton_fiszkiNauka_Zapisz.setEnabled(false);
+        } catch (SQLException ex) {
+            Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }//GEN-LAST:event_jButton_fiszkiNauka_ZapiszActionPerformed
 
     private void jButton_dodajSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_dodajSlownikActionPerformed
