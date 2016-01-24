@@ -5,6 +5,9 @@
  */
 package projektzespolowy;
 
+import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -88,6 +91,9 @@ public class OknGlowne extends javax.swing.JFrame {
         jButton_zapisz = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel_rejestracja = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -476,50 +482,76 @@ public class OknGlowne extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setText("Słowniki");
+
+        jLabel10.setText("Słówka");
+
+        jButton5.setText("Nowe słówko");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_edytujSlownikLayout = new javax.swing.GroupLayout(jPanel_edytujSlownik);
         jPanel_edytujSlownik.setLayout(jPanel_edytujSlownikLayout);
         jPanel_edytujSlownikLayout.setHorizontalGroup(
             jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_edytujSlownikLayout.createSequentialGroup()
+            .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
-                .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_edytujSlownikLayout.createSequentialGroup()
+                        .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                            .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)))
                         .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton_edytujSlownik)
-                                    .addComponent(jButton_dodajSlownik)))
-                            .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
                                 .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton7)
                                     .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                                        .addComponent(jButton_edytuj)
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))))))
-                        .addGap(28, 28, 28))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_edytujSlownikLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton_zapisz)
-                        .addGap(62, 62, 62))))
+                                        .addGap(37, 37, 37)
+                                        .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jButton_edytujSlownik)
+                                            .addComponent(jButton_dodajSlownik)))
+                                    .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton7)
+                                            .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
+                                                .addComponent(jButton_edytuj)
+                                                .addGap(18, 18, 18)
+                                                .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))))))
+                                .addGap(28, 28, 28))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_edytujSlownikLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton_zapisz)
+                                .addGap(62, 62, 62))))
+                    .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
+                        .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel_edytujSlownikLayout.setVerticalGroup(
             jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
                         .addComponent(jButton_dodajSlownik)
                         .addGap(18, 18, 18)
                         .addComponent(jButton_edytujSlownik)))
-                .addGap(47, 47, 47)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_edytujSlownikLayout.createSequentialGroup()
                         .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,8 +565,10 @@ public class OknGlowne extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton_zapisz))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel_edytujSlownikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7)
+                    .addComponent(jButton5))
                 .addGap(50, 50, 50))
         );
 
@@ -954,7 +988,7 @@ public class OknGlowne extends javax.swing.JFrame {
                     stmt = con.createStatement();
 
                     String query = "CREATE TABLE ADMIN93." + tx + " "
-                            + "(id INTEGER not NULL, "
+                            + "(id INTEGER not NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), "
                             + " slowko VARCHAR(100), "
                             + " tlumaczenie VARCHAR(100), "
                             + " PRIMARY KEY ( id ))";
@@ -1069,7 +1103,6 @@ public class OknGlowne extends javax.swing.JFrame {
             int index = jList3.getSelectedIndex();
             DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
             String text = (String) tr2.getElementAt(index);
-            jTextField4.setText(text);
             int j = index + 1;
 
             int index2 = jList1.getSelectedIndex();
@@ -1105,6 +1138,65 @@ public class OknGlowne extends javax.swing.JFrame {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton_zapiszActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        JFrame dodawanie = new JFrame("Dodaj");
+        dodawanie.setSize(250, 120);
+        dodawanie.setVisible(true);
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        dodawanie.add(panel);
+        final JTextField teksty = new JTextField(10);
+        teksty.setEditable(true);
+        panel.add(teksty);
+        final JTextField teksty2 = new JTextField(10);
+        teksty2.setEditable(true);
+        panel.add(teksty2);
+        JButton przycisk = new JButton("Dodaj");
+        panel.add(przycisk);
+        przycisk.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String tx = teksty.getText();
+                    String tx2 = teksty2.getText();
+                    int index2 = jList1.getSelectedIndex();
+                    ListModel tr = jList1.getModel();
+                    String text2 = (String) tr.getElementAt(index2);
+
+                    int index = jList3.getSelectedIndex();
+                    DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
+
+                    Statement stmt;
+                    String host = "jdbc:derby://localhost:1527/Baza";
+                    String uName = "admin93";
+                    String uPass = "admin";
+
+                    Connection con = DriverManager.getConnection(host, uName, uPass);
+
+                    stmt = con.createStatement();
+
+                    String query2 = "INSERT INTO ADMIN93." + text2 + " (SLOWKO, TLUMACZENIE) "
+                            + "VALUES ('" + tx + "','" + tx2 + "') ";
+
+                    stmt.executeUpdate(query2);
+
+                    String query3 = "select SLOWKO from ADMIN93." + text2;
+                    ResultSet rs = stmt.executeQuery(query3);
+
+                    tr2.clear();
+                    while (rs.next()) {
+                        String nazw = rs.getString("SLOWKO");
+                        tr2.addElement(nazw);
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        });
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1157,6 +1249,7 @@ public class OknGlowne extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton_Zarejestruj;
     private javax.swing.JButton jButton_dodajSlownik;
@@ -1175,6 +1268,7 @@ public class OknGlowne extends javax.swing.JFrame {
     private javax.swing.JButton jButton_zapisz;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1182,6 +1276,7 @@ public class OknGlowne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_haslo;
     private javax.swing.JLabel jLabel_login;
     private javax.swing.JList jList1;
