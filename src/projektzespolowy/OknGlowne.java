@@ -5,9 +5,6 @@
  */
 package projektzespolowy;
 
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,7 +34,7 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_ocena.setVisible(false);
         jPanel_edytujSlownik.setVisible(false);
         jPanel_rejestracja.setVisible(false);
-
+        
     }
 
     /**
@@ -766,7 +763,7 @@ public class OknGlowne extends javax.swing.JFrame {
             jPanel_fiszkiNauka.setVisible(false);
             jPanel_ocena.setVisible(false);
             jPanel_start.setVisible(false);
-
+            
             Object[] lista = Slownik.getTitles();
             DefaultListModel tr2 = (DefaultListModel) jList1.getModel();
             tr2.clear();
@@ -776,7 +773,7 @@ public class OknGlowne extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
 
     }//GEN-LAST:event_jMenuItem_edytujSlownikActionPerformed
 
@@ -797,27 +794,27 @@ public class OknGlowne extends javax.swing.JFrame {
             Statement stmt = con.createStatement();
             String SQL = "select * from ADMIN93.LOGOWANIE";
             ResultSet rs = stmt.executeQuery(SQL);
-
+            
             for (int i = 0; i < 10; i++) {
                 rs.next();
                 llogin[i] = rs.getString("LOGIN");
                 hhaslo[i] = rs.getString("HASLO");
             }
-
+            
         } catch (SQLException err) {
             System.out.println(err.getMessage());
         }
         for (int i = 0; i < 10; i++) {
             if (login.equals(llogin[i])) {
                 if (haslo.equals(hhaslo[i])) {
-
+                    
                     jPanel_fiszkiWybor.setVisible(true);
                     jPanel_logowanie.setVisible(false);
                     jPanel_fiszkiNauka.setVisible(false);
                     jPanel_ocena.setVisible(false);
                     jPanel_start.setVisible(false);
                     jMenuItem_edytujSlownik.setEnabled(true);
-
+                    
                     try {
                         jComboBox1.setModel(new DefaultComboBoxModel(Slownik.getTitles()));
                     } catch (SQLException ex) {
@@ -845,7 +842,7 @@ public class OknGlowne extends javax.swing.JFrame {
     private void jButton_edytujSlownikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_edytujSlownikActionPerformed
         jButton_edytuj.setEnabled(true);
         jButton_zapisz.setEnabled(true);
-
+        
 
     }//GEN-LAST:event_jButton_edytujSlownikActionPerformed
 
@@ -860,13 +857,13 @@ public class OknGlowne extends javax.swing.JFrame {
     private void jButton_ZarejestrujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ZarejestrujActionPerformed
         Connection con = null;
         PreparedStatement pst = null;
-
+        
         String url = "jdbc:derby://localhost:1527/Baza";
         String user = "admin93";
         String password = "admin";
-
+        
         try {
-
+            
             String login = jTextField_RLogin.getText();
             String haslo = jPasswordField_RHaslo.getText();
             String haslo2 = jPasswordField_RHaslo2.getText();
@@ -874,15 +871,15 @@ public class OknGlowne extends javax.swing.JFrame {
             if (!(haslo.equals(haslo2))) {
                 JOptionPane.showMessageDialog(null, "HASŁA SIĘ RÓŻNIĄ");
             } else {
-
+                
                 con = DriverManager.getConnection(url, user, password);
-
+                
                 pst = con.prepareStatement("INSERT INTO LOGOWANIE VALUES(?,?,?)");
                 pst.setString(1, login);
                 pst.setString(2, haslo);
                 pst.setString(3, email);
                 pst.executeUpdate();
-
+                
                 JOptionPane.showMessageDialog(rootPane, "Zarejestrowano!");
                 jPanel_rejestracja.setVisible(false);
                 jPanel_logowanie.setVisible(false);
@@ -891,11 +888,11 @@ public class OknGlowne extends javax.swing.JFrame {
                 jPanel_ocena.setVisible(false);
                 jPanel_start.setVisible(true);
             }
-
+            
         } catch (SQLException ex) {
             Logger lgr = Logger.getLogger(OknGlowne.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
-
+            
         }
     }//GEN-LAST:event_jButton_ZarejestrujActionPerformed
 
@@ -973,7 +970,7 @@ public class OknGlowne extends javax.swing.JFrame {
         JButton przycisk = new JButton("Dodaj");
         panel.add(przycisk);
         przycisk.addActionListener(new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -982,24 +979,24 @@ public class OknGlowne extends javax.swing.JFrame {
                     String host = "jdbc:derby://localhost:1527/Baza";
                     String uName = "admin93";
                     String uPass = "admin";
-
+                    
                     Connection con = DriverManager.getConnection(host, uName, uPass);
-
+                    
                     stmt = con.createStatement();
-
+                    
                     String query = "CREATE TABLE ADMIN93." + tx + " "
                             + "(id INTEGER not NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), "
                             + " slowko VARCHAR(100), "
                             + " tlumaczenie VARCHAR(100), "
                             + " PRIMARY KEY ( id ))";
-
+                    
                     stmt.executeUpdate(query);
-
+                    
                     String query2 = "INSERT INTO ADMIN93.LISTA_SLOWNIKOW (NAZWA_SLOWNIKA, LOGIN) "
                             + "VALUES ('" + tx + "','admin') ";
-
+                    
                     stmt.executeUpdate(query2);
-
+                    
                     Object[] lista = Slownik.getTitles();
                     DefaultListModel tr2 = (DefaultListModel) jList1.getModel();
                     tr2.clear();
@@ -1011,41 +1008,41 @@ public class OknGlowne extends javax.swing.JFrame {
                 }
             }
         });
-
+        
 
     }//GEN-LAST:event_jButton_dodajSlownikActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-
+        
         try {
-
+            
             Statement stmt;
             String host = "jdbc:derby://localhost:1527/Baza";
             String uName = "admin93";
             String uPass = "admin";
-
+            
             Connection con = DriverManager.getConnection(host, uName, uPass);
-
+            
             stmt = con.createStatement();
-
+            
             int index = jList1.getSelectedIndex();
             ListModel tr = jList1.getModel();
             String text = (String) tr.getElementAt(index);
-
+            
             String query = "select SLOWKO from ADMIN93." + text;
             ResultSet rs = stmt.executeQuery(query);
-
+            
             DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
             tr2.clear();
             while (rs.next()) {
                 String nazw = rs.getString("SLOWKO");
                 tr2.addElement(nazw);
             }
-
+            
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
 
     }//GEN-LAST:event_jList1MouseClicked
 
@@ -1055,21 +1052,21 @@ public class OknGlowne extends javax.swing.JFrame {
             String host = "jdbc:derby://localhost:1527/Baza";
             String uName = "admin93";
             String uPass = "admin";
-
+            
             Connection con = DriverManager.getConnection(host, uName, uPass);
-
+            
             stmt = con.createStatement();
-
+            
             int index2 = jList1.getSelectedIndex();
             ListModel tr = jList1.getModel();
             String text2 = (String) tr.getElementAt(index2);
-
+            
             int index = jList3.getSelectedIndex();
             DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
             String text = (String) tr2.getElementAt(index);
             jTextField4.setText(text);
             int j = index + 1;
-
+            
             String query = "select TLUMACZENIE  from ADMIN93." + text2 + " where ID =" + j;
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
@@ -1079,7 +1076,7 @@ public class OknGlowne extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
 
     }//GEN-LAST:event_jList3MouseClicked
 
@@ -1099,39 +1096,39 @@ public class OknGlowne extends javax.swing.JFrame {
         try {
             String word = jTextField4.getText();
             String trans = jTextField3.getText();
-
+            
             int index = jList3.getSelectedIndex();
             DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
             String text = (String) tr2.getElementAt(index);
             int j = index + 1;
-
+            
             int index2 = jList1.getSelectedIndex();
             ListModel tr = jList1.getModel();
             String text2 = (String) tr.getElementAt(index2);
-
+            
             Statement stmt;
             String host = "jdbc:derby://localhost:1527/Baza";
             String uName = "admin93";
             String uPass = "admin";
-
+            
             Connection con = DriverManager.getConnection(host, uName, uPass);
-
+            
             stmt = con.createStatement();
             String query = "UPDATE ADMIN93." + text2 + " "
                     + "SET SLOWKO='" + word + "', TLUMACZENIE='" + trans + "'"
                     + "WHERE ID=" + j;
-
+            
             stmt.executeUpdate(query);
-
+            
             String query2 = "select SLOWKO from ADMIN93." + text2;
             ResultSet rs = stmt.executeQuery(query2);
-
+            
             tr2.clear();
             while (rs.next()) {
                 String nazw = rs.getString("SLOWKO");
                 tr2.addElement(nazw);
             }
-
+            
             jTextField4.setText("");
             jTextField3.setText("");
         } catch (SQLException ex) {
@@ -1155,7 +1152,7 @@ public class OknGlowne extends javax.swing.JFrame {
         JButton przycisk = new JButton("Dodaj");
         panel.add(przycisk);
         przycisk.addActionListener(new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -1164,36 +1161,39 @@ public class OknGlowne extends javax.swing.JFrame {
                     int index2 = jList1.getSelectedIndex();
                     ListModel tr = jList1.getModel();
                     String text2 = (String) tr.getElementAt(index2);
-
+                    
                     int index = jList3.getSelectedIndex();
                     DefaultListModel tr2 = (DefaultListModel) jList3.getModel();
-
+                    
                     Statement stmt;
                     String host = "jdbc:derby://localhost:1527/Baza";
                     String uName = "admin93";
                     String uPass = "admin";
-
+                    
                     Connection con = DriverManager.getConnection(host, uName, uPass);
-
+                    
                     stmt = con.createStatement();
-
+                    
                     String query2 = "INSERT INTO ADMIN93." + text2 + " (SLOWKO, TLUMACZENIE) "
                             + "VALUES ('" + tx + "','" + tx2 + "') ";
-
+                    
                     stmt.executeUpdate(query2);
-
+                    
                     String query3 = "select SLOWKO from ADMIN93." + text2;
                     ResultSet rs = stmt.executeQuery(query3);
-
+                    
                     tr2.clear();
                     while (rs.next()) {
                         String nazw = rs.getString("SLOWKO");
                         tr2.addElement(nazw);
                     }
+                    
+                    teksty.setText("");
+                    teksty2.setText("");
                 } catch (SQLException ex) {
                     Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
+                
             }
         });
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -1202,12 +1202,12 @@ public class OknGlowne extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-
+        
         try {
             String host = "jdbc:derby://localhost:1527/Baza";
             String uName = "admin93";
             String uPass = "admin";
-
+            
             Connection con = DriverManager.getConnection(host, uName, uPass);
         } catch (SQLException err) {
             System.out.println(err.getMessage());
