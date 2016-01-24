@@ -76,11 +76,11 @@ public class OknGlowne extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton_fiszkiNauka_cofnij = new javax.swing.JButton();
         jButton_fiszkiNauka_Edytuj = new javax.swing.JButton();
-        jButton_fiszkiNauka_Zapisz = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jButton_fiszkiNauka_Zapisz = new javax.swing.JButton();
         jPanel_edytujSlownik = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
@@ -264,6 +264,11 @@ public class OknGlowne extends javax.swing.JFrame {
         });
 
         jComboBox1.setModel(new DefaultComboBoxModel());
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel_fiszkiWyborLayout = new javax.swing.GroupLayout(jPanel_fiszkiWybor);
         jPanel_fiszkiWybor.setLayout(jPanel_fiszkiWyborLayout);
@@ -301,7 +306,7 @@ public class OknGlowne extends javax.swing.JFrame {
         jTextField_fiszkiNauka_2slowko.setEditable(false);
         jTextField_fiszkiNauka_2slowko.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
-        jButton3.setText("Pokaż odpowiedź");
+        jButton3.setText("Dalej");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -350,9 +355,9 @@ public class OknGlowne extends javax.swing.JFrame {
         jPanel_ocenaLayout.setVerticalGroup(
             jPanel_ocenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_ocenaLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel_ocenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_ocena0)
                     .addComponent(jButton_ocena1)
@@ -377,14 +382,6 @@ public class OknGlowne extends javax.swing.JFrame {
             }
         });
 
-        jButton_fiszkiNauka_Zapisz.setText("Zapisz");
-        jButton_fiszkiNauka_Zapisz.setEnabled(false);
-        jButton_fiszkiNauka_Zapisz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_fiszkiNauka_ZapiszActionPerformed(evt);
-            }
-        });
-
         jTextField2.setText("99");
         jTextField2.setEnabled(false);
 
@@ -394,19 +391,20 @@ public class OknGlowne extends javax.swing.JFrame {
 
         jLabel12.setText("Wybrany słownik");
 
+        jButton_fiszkiNauka_Zapisz.setText("Zapisz");
+        jButton_fiszkiNauka_Zapisz.setEnabled(false);
+        jButton_fiszkiNauka_Zapisz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_fiszkiNauka_ZapiszActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_fiszkiNaukaLayout = new javax.swing.GroupLayout(jPanel_fiszkiNauka);
         jPanel_fiszkiNauka.setLayout(jPanel_fiszkiNaukaLayout);
         jPanel_fiszkiNaukaLayout.setHorizontalGroup(
             jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
-                .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
             .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
                 .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(jButton_fiszkiNauka_Zapisz))
                     .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,22 +413,24 @@ public class OknGlowne extends javax.swing.JFrame {
                                     .addComponent(jButton_fiszkiNauka_cofnij)
                                     .addComponent(jTextField_fiszkiNauka_1slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton3))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
-                                        .addGap(35, 35, 35)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton_fiszkiNauka_Edytuj)
                                     .addComponent(jTextField_fiszkiNauka_2slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addComponent(jButton_fiszkiNauka_Zapisz))
+                    .addGroup(jPanel_fiszkiNaukaLayout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel_fiszkiNaukaLayout.setVerticalGroup(
             jPanel_fiszkiNaukaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,11 +455,11 @@ public class OknGlowne extends javax.swing.JFrame {
                     .addComponent(jTextField_fiszkiNauka_1slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3)
                     .addComponent(jTextField_fiszkiNauka_2slowko, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton_fiszkiNauka_Zapisz)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel_ocena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addGap(30, 30, 30))
         );
 
         jPanel_edytujSlownik.setPreferredSize(new java.awt.Dimension(460, 400));
@@ -853,6 +853,9 @@ public class OknGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_zalogujActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        
+        
         jPanel_fiszkiNauka.setVisible(true);
         jPanel_logowanie.setVisible(false);
         jPanel_fiszkiWybor.setVisible(false);
@@ -860,6 +863,43 @@ public class OknGlowne extends javax.swing.JFrame {
         
         String n=jComboBox1.getSelectedItem().toString();
         jTextField1.setText(n);
+        
+        
+        String[] pl = new String[10];
+        String sl= jTextField1.getText();
+        int z=0;
+        
+        try {
+            String host = "jdbc:derby://localhost:1527/Baza";
+            String uName = "admin93";
+            String uPass = "admin";
+            Connection con = DriverManager.getConnection(host, uName, uPass);
+            Statement stmt = con.createStatement();
+            String SQL = "select * from ADMIN93."+sl;
+            ResultSet rs = stmt.executeQuery(SQL);
+
+            for (int i = 0; i < 10; i++) {
+                rs.next();
+                pl[i] = rs.getString("SLOWKO");
+                
+            }
+
+        } catch (SQLException err) {
+            System.out.println(err.getMessage());
+        }
+        for(int i=0;i<10;i++){
+            if(pl[i]==null){
+                z=z+1;
+            }
+        }
+        String[] ppl= new String[10-z];
+        
+        for(int i=0;i<10-z;i++){
+            ppl[i]=pl[i];   
+        }
+        
+        String liczcz = Integer.toString(ppl.length);
+        jTextField2.setText(liczcz);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1312,6 +1352,10 @@ public class OknGlowne extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
