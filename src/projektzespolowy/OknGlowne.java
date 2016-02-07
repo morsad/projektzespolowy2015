@@ -941,7 +941,7 @@ public class OknGlowne extends javax.swing.JFrame {
             String uPass = "admin";
             Connection con = DriverManager.getConnection(host, uName, uPass);
             Statement stmt = con.createStatement();
-            String SQL = "select * from ADMIN93." + sl + " WHERE czas=0";
+            String SQL = "select * from ADMIN93." + sl + " WHERE czas<0";
             ResultSet rs = stmt.executeQuery(SQL);
 
             for (int i = 0; i < 10; i++) {
@@ -998,6 +998,7 @@ public class OknGlowne extends javax.swing.JFrame {
         if (l % 2 == 1) {
             jTextField_fiszkiNauka_1slowko.setText(ppl[dl - 1]);
             jTextField_fiszkiNauka_2slowko.setText(null);
+            jPanel_ocena.setVisible(false);
         } else {
 
             String slowko1 = jTextField_fiszkiNauka_1slowko.getText();
@@ -1009,7 +1010,7 @@ public class OknGlowne extends javax.swing.JFrame {
                 String uPass = "admin";
                 Connection con = DriverManager.getConnection(host, uName, uPass);
                 Statement stmt = con.createStatement();
-                String SQL = "select * from ADMIN93." + sl + " WHERE czas=0";
+                String SQL = "select * from ADMIN93." + sl + " WHERE czas<0";
                 ResultSet rs = stmt.executeQuery(SQL);
 
                 for (int i = 0; i < ppl.length; i++) {
