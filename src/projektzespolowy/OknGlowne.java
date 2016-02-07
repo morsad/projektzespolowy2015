@@ -836,7 +836,7 @@ public class OknGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem_edytujSlownikActionPerformed
 
     private void jMenuItem_oProgramieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_oProgramieActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 0.9 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
+        JOptionPane.showMessageDialog(rootPane, "Fiszki Program \n V 1.0.1 \n By Kamil Jaroniec, Łukasz Wójciuk, Andrzej Kopiec", "O programie", 1);
     }//GEN-LAST:event_jMenuItem_oProgramieActionPerformed
 
     private void jButton_zalogujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_zalogujActionPerformed
@@ -985,6 +985,12 @@ public class OknGlowne extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "KONIEC");
                 jTextField_fiszkiNauka_1slowko.setText(null);
                 jTextField_fiszkiNauka_2slowko.setText(null);
+                jPanel_edytujSlownik.setVisible(false);
+                jPanel_logowanie.setVisible(false);
+                jPanel_fiszkiWybor.setVisible(true);
+                jPanel_fiszkiNauka.setVisible(false);
+                jPanel_ocena.setVisible(false);
+                jPanel_start.setVisible(false);
             } catch (SQLException ex) {
                 Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1018,6 +1024,7 @@ public class OknGlowne extends javax.swing.JFrame {
             for (int i = 0; i < ppl.length; i++) {
                 if (slowko1.equals(slowko[i])) {
                     jTextField_fiszkiNauka_2slowko.setText(tlumaczenie[i]);
+                    jButton3.setEnabled(false);
                 }
             }
 
@@ -1440,6 +1447,8 @@ public class OknGlowne extends javax.swing.JFrame {
             String query2 = "UPDATE ADMIN93." + slw + " SET CZAS=1 WHERE SLOWKO='" + slo + "'";
 
             stmt.executeUpdate(query2);
+
+            jButton3.setEnabled(true);
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1462,6 +1471,7 @@ public class OknGlowne extends javax.swing.JFrame {
             String query2 = "UPDATE ADMIN93." + slw + " SET CZAS=2 WHERE SLOWKO='" + slo + "'";
 
             stmt.executeUpdate(query2);
+            jButton3.setEnabled(true);
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1487,6 +1497,7 @@ public class OknGlowne extends javax.swing.JFrame {
                     + " WHERE SLOWKO ='" + slo + "'";
 
             stmt.executeUpdate(query2);
+            jButton3.setEnabled(true);
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1510,6 +1521,7 @@ public class OknGlowne extends javax.swing.JFrame {
             String query2 = "UPDATE ADMIN93." + slw + " SET CZAS=4 WHERE SLOWKO='" + slo + "'";
 
             stmt.executeUpdate(query2);
+            jButton3.setEnabled(true);
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1533,6 +1545,7 @@ public class OknGlowne extends javax.swing.JFrame {
             String query2 = "UPDATE ADMIN93." + slw + " SET CZAS=5 WHERE SLOWKO='" + slo + "'";
 
             stmt.executeUpdate(query2);
+            jButton3.setEnabled(true);
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1556,6 +1569,7 @@ public class OknGlowne extends javax.swing.JFrame {
             String query2 = "UPDATE ADMIN93." + slw + " SET CZAS=6 WHERE SLOWKO='" + slo + "'";
 
             stmt.executeUpdate(query2);
+            jButton3.setEnabled(true);
         } catch (SQLException ex) {
             Logger.getLogger(OknGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
