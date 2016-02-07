@@ -1,8 +1,8 @@
-Sun Jan 24 20:15:11 CET 2016 : Serwer sieciowy Apache Derby - 10.10.2.0 - (1582446) uruchomiony i gotowy do zaakceptowania po³¹czeñ na porcie 1527 w {3} 
+Sun Feb 07 17:01:22 CET 2016 : Serwer sieciowy Apache Derby - 10.10.2.0 - (1582446) uruchomiony i gotowy do zaakceptowania po³¹czeñ na porcie 1527 w {3} 
 ----------------------------------------------------------------
-Sun Jan 24 20:15:11 CET 2016:
- Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) systemu Derby: instancja a816c00e-0152-750f-bcf6-ffff8d39f96c
-w katalogu bazy danych C:\Users\Morsad\Documents\NetBeansProjects\ProjektZespolowy\Baza\EHEE sun.misc.Launcher$AppClassLoader@5e2de80c 
+Sun Feb 07 17:01:23 CET 2016:
+ Uruchamianie wersji The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446) systemu Derby: instancja a816c00e-0152-bc77-512e-ffff8d39f96c
+w katalogu bazy danych C:\Users\Morsad\Documents\NetBeansProjects\ProjektZespolowy\Baza\Baza sun.misc.Launcher$AppClassLoader@5e2de80c 
 
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_66-b18
@@ -12,5 +12,3 @@ os.arch=amd64
 os.version=6.1
 derby.system.home=C:\Users\Morsad\Documents\NetBeansProjects\ProjektZespolowy\Baza
 Uruchomiono program ³aduj¹cy klasê bazy danych - derby.database.classpath=''
-----------------------------------------------------------------
-Sun Jan 24 20:15:58 CET 2016: Shutting down Derby engine
